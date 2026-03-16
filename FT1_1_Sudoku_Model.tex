@@ -1,0 +1,49 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\title{FT1.1 — Mathematical Model for Sudoku / Generalized Sudoku}
+\author{Sistema Operador Unificador Fenomenológico General}
+\begin{document}
+\maketitle
+
+\section*{Equation}
+\begin{equation}
+S^* = \arg\min_S [ \Phi(S) + \lambda \sum_{x,y} |z_{k+1}-z_k| ]
+\end{equation}
+
+Solution condition:
+\begin{equation}
+\Phi(S) = 0
+\end{equation}
+
+\section*{Variables}
+\begin{itemize}
+\item $S(x,y,z)$ : board state
+\item $S^*$ : optimal solution
+\item $\Phi(S)$ : constraint violation function
+\item $\lambda$ : depth regulation factor
+\item $x,y$ : board coordinates
+\item $z$ : logical exploration depth
+\item $\beta \in \{-1,1\}$ : depth displacement bias
+\end{itemize}
+
+\section*{Domain}
+$D = \{1,2,\dots,n^2\}$
+
+Classic Sudoku:
+\begin{itemize}
+\item Board: $9\times9$
+\item Subgrid: $3\times3$
+\item Domain: $\{1..9\}$
+\end{itemize}
+
+\section*{Interpretation}
+The Sudoku puzzle is embedded into a three dimensional configuration space $(x,y,z)$.
+The XY plane preserves board structure while the Z axis allows exploration of alternate configurations.
+
+A valid solution occurs when:
+\begin{equation}
+\Phi(S)=0
+\end{equation}
+
+\end{document}
